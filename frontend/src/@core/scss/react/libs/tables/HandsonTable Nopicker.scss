@@ -1,0 +1,72 @@
+@import '../../../base/bootstrap-extended/include';
+@import '../../../base/components/include';
+
+.react-dataTable-Handson {
+  border-radius: 0;
+  z-index: 0;
+  
+  .handsontable th {
+    background-color: $woorihead2;
+  }
+
+  .handsontable .relative {
+    color:gray;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
+    font-size: 14px;
+    .handsontable th {
+      background-color: $woorihead2;
+      min-height: 0;
+      height: 100%;
+      .handsontable tr {
+        &:first-child th {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        // border-top: 1px solid;
+        // border-color: $border-color;
+        min-height: 0;
+        font-style: 0.857rem;
+        letter-spacing: 0.5px;
+        font-weight: bold;
+      }
+    }
+  }
+  .handsontable .htCheckboxRendererInput {
+    margin: 0;
+  }
+
+  .handsontable td {
+    align-items: center;
+    justify-content: center;
+    &:first-of-type {
+      text-align: center;
+	    vertical-align: middle;
+    }
+  }
+}
+
+.handsontable .selected-td { 
+  background-color: #B9B9C3; 
+} 
+
+.htDatepickerHolder {
+  .pika-title{
+    .pika-prev{
+      display: none;
+    }
+    .pika-next{
+      display: none;
+    }
+    .pika-label {
+      pointer-events: none;
+    }
+  }
+}
+
+
+

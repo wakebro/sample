@@ -1,0 +1,9 @@
+@import '~flatpickr/dist/flatpickr.css';
+@import '../../../base/plugins/forms/pickers/form-flat-pickr';
+
+
+@media (max-width: 380px ){
+    .title_align {
+        text-align:left;
+    }
+}

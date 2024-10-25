@@ -1,0 +1,157 @@
+// App Email
+// ========================================================================
+
+@import '../../base/pages/app-email.scss';
+
+// For editor height
+.email-application {
+  #message-editor .rdw-editor-main {
+    min-height: 17.9rem;
+  }
+}
+
+html[dir='rtl'] {
+  .email-application {
+    .email-app-details .email-detail-header {
+      .email-header-left .go-back svg,
+      .email-header-right .email-prev svg,
+      .email-header-right .email-next svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    .toggle-cc.me-1 {
+      margin-right: 1rem;
+      margin-left: 0 !important;
+    }
+  }
+}
+
+
+.sidebar-left .sidebar-content,
+.sidebar-left .list-group-messages .list-group-item {
+  border-bottom: none !important;
+  border-top: none !important;
+  border-right: none !important;
+  
+}
+.list-group-messages .list-group-item {
+  background-color: transparent; /* 탭의 배경색을 투명하게 설정 */
+}
+    .sidebar {
+      .email-app-sidebar {
+        width: $menu-expanded-width;
+        height: inherit;
+        background-color: $white;
+        border-top-left-radius: $card-border-radius;
+        border-bottom-left-radius: $card-border-radius;
+        transition: all 0.3s ease, background 0s;
+        z-index: 210;
+        .email-app-menu {
+          width: 100%;
+          height: 100%;
+          z-index: 3;
+          .compose-btn {
+            padding: 1.5rem;
+          }
+          .sidebar-menu-list {
+            position: relative;
+            height: calc(100% - 80px); // search section height 80px
+          }
+        }
+      }
+      .list-group .list-group-item {
+        padding: 0.58rem 1.5rem;
+        border: 0;
+        font-weight: $font-weight-bold;
+        letter-spacing: 0.4px;
+        border-left: 2px solid transparent;
+        border-radius: 0;
+        + .list-group-item.active {
+          margin-top: 0;
+        }
+        &:hover,
+        &:focus,
+        &.active {
+          background: transparent;
+          color: $primary;
+        }
+        &.active {
+          border-color: #7367f0;
+        }
+      }
+    }
+    // Sidebar area ends
+    // Right content area common css starts
+    .content-right {
+      width: calc(100% - #{$menu-expanded-width});
+      border-left: 1px solid $border-color;
+      .email-app-list {
+        height: inherit;
+      }
+      .app-fixed-search {
+        padding: 0.4215rem 0.5rem;
+        border-bottom: 1px solid $border-color;
+        background-color: $white;
+        border-top-right-radius: $border-radius;
+        .input-group:focus-within {
+          box-shadow: none;
+        }
+        input,
+        .input-group-text {
+          border: 0;
+          background-color: transparent;
+        }
+      }
+      .action-icon {
+        cursor: pointer;
+      }
+    }
+    // Right content area common css End
+    // Sidebar toggle icon
+    .sidebar-toggle {
+      cursor: pointer;
+      float: left;
+    }
+    .go-back {
+      cursor: pointer;
+    }
+    .app-action {
+      display: flex;
+      flex-direction: column; // 수정된 부분
+      justify-content: flex-end;
+      border-bottom: 1px solid $border-color;
+      background-color: $white;
+      
+    }
+    @include media-breakpoint-down(lg) {
+     
+          .sidebar-left {
+            position: relative;
+            .email-app-sidebar {
+              transform: translateX(-110%);
+              transition: all 0.3s ease-in-out;
+              position: absolute;
+              left: 0;
+              border-top-left-radius: $border-radius-sm;
+              border-bottom-left-radius: $border-radius-sm;
+            }
+            &.show {
+              .email-app-sidebar {
+                transform: translateX(0%);
+                transition: all 0.3s ease;
+              }
+            }
+          }
+          .content-right {
+            width: 100%;
+            border-left: 0;
+            .app-fixed-search {
+              border-top-left-radius: $border-radius;
+            }
+            .email-app-details {
+              width: 100%;
+              border-radius: $border-radius;
+            }
+          }
+        }
